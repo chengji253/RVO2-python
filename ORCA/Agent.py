@@ -39,7 +39,6 @@ class Agent:
         self.orcaLines_.clear()
         invTimeHorizonObst = 1.0 / self.timeHorizonObst_
 
-        # 创建障碍物ORCA线
         for i in range(len(self.obstacleNeighbors_)):
             obstacle1 = self.obstacleNeighbors_[i][1]
             obstacle2 = obstacle1.next_

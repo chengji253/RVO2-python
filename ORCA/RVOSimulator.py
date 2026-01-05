@@ -92,7 +92,6 @@ class RVOSimulator:
         if len(vertices) > 1:
             obstacleNo = len(self.obstacles_)
 
-            # 遍历所有顶点
             for i in range(len(vertices)):
                 obstacle = Obstacle()
                 obstacle.point_ = vertices[i]

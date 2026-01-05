@@ -28,7 +28,6 @@ class Vector2:
             raise TypeError(f"Unsupported operand type(s) for *: 'Vector2' and '{type(other)}'")
 
     def __rmul__(self, other):
-        # 反向乘法，支持 scalar * Vector2
         if isinstance(other, (int, float)):
             return Vector2(self.x_ * other, self.y_ * other)
         else:
@@ -102,17 +101,16 @@ if __name__ == "__main__":
     v2 = Vector2(1, 2)
     v3 = Vector2(4, 2)
 
-    print(v1 + v2)          # 向量加法
-    print(v1 - v2)          # 向量减法
-    print(v1 * v2)          # 点积
+    print(v1 + v2)          
+    print(v1 - v2)        
+    print(v1 * v2)        
     print(v1 * 2)
-    print(scalar_multiply(2, v1))# 标量乘法
-    print(v1 / 2)           # 标量除法
-    print(abs(v1))  # 向量长度
+    print(scalar_multiply(2, v1))
+    print(v1 / 2)         
+    print(abs(v1))  
     print(absSq(v1))
-    print(det(v1, v2))  # 行列式（叉积）
+    print(det(v1, v2))  
     print(leftOf(v1, v2, v3))
     print(normalize(v1))
-    # 使用外部函数进行标量乘法
-    print(scalar_multiply(2, v1))  # 标量乘法
+    print(scalar_multiply(2, v1))  
 

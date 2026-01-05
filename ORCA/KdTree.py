@@ -189,7 +189,6 @@ class KdTree:
             self.deleteObstacleTree(node.right)
             del node
 
-    # agent 是指针 rangeSq 是引用
     def queryAgentTreeRecursive(self, agent, rangeSq, node):
         if self.agentTree_[node].end - self.agentTree_[node].begin <= RVO_MAX_LEAF_SIZE:
             for i in range(self.agentTree_[node].begin, self.agentTree_[node].end):
@@ -217,7 +216,6 @@ class KdTree:
                     rangeSq = self.queryAgentTreeRecursive(agent, rangeSq, self.agentTree_[node].left)
         return rangeSq
 
-    # agent 是指针 rangeSq 是引用
     def queryObstacleTreeRecursive(self, agent, rangeSq, node):
         if node:
             obstacle1 = node.obstacle
